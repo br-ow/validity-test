@@ -9,20 +9,20 @@ app = Flask(__name__)
 
 @app.route("/")
 def main():
+    #the environment in which to render the jinja template
+    #required by jinja
     jenv = Environment(autoescape=select_autoescape(
     enabled_extensions=('html', 'xml'),
     default_for_string=True,
     ),
     loader=BaseLoader(),)
-    msgs = parseMsgs('./smallset')
 
-    #template = jenv.get_template('jtemplate.html')
 
-    #return template.render(emails=msgs)
+    msgs = parse_msgs('./smallset')
 
     return render_template('jtemplate.html', emails=msgs)
 
-def parseMsgs(directory):
+def parse_msgs(directory):
     #reference: 
     # https://www.geeksforgeeks.org/how-to-iterate-over-files-in-directory-using-python/
     # https://products.fileformat.com/email/python/msg-extractor/

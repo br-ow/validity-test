@@ -7,11 +7,13 @@
 <body>
     <dl id="emails">
     {% for msg in emails %}
-        <dt>{{ msg.Message }}</dt>
+        <p>
+        <dt>{{ msg.get('Message-ID')}}</dt>
         <dd>To: {{msg.To}}</dd>
         <dd>From: {{msg.From}}</dd>
         <dd>Date: {{msg.Date}}</dd>
         <dd>Subject: {{msg.Subject}}</dd>
+        </p>
 
     {% endfor %}
     </dl>
