@@ -6,5 +6,6 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
+    container_name: validity
     ports:
       - 5002:5002
