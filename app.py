@@ -22,16 +22,6 @@ def main():
 
     return render_template('jtemplate.html', emails=msgs)
 
-
-class Message:
-    def __init__(self, to, frum, date, subject, id):
-        self.to = to
-        self.frum = frum
-        self.date = date
-        self.subject = subject
-        self.id = id
-
-
 def parseMsgs(directory):
     #reference: 
     # https://www.geeksforgeeks.org/how-to-iterate-over-files-in-directory-using-python/

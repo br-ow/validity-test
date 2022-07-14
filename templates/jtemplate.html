@@ -5,15 +5,16 @@
     <title>Email Viewer</title>
 </head>
 <body>
-    <ul id="emails">
+    <dl id="emails">
     {% for msg in emails %}
-        <li>{{ msg.subject }}</li>
+        <dt>{{ msg.Message }}</dt>
+        <dd>To: {{msg.To}}</dd>
+        <dd>From: {{msg.From}}</dd>
+        <dd>Date: {{msg.Date}}</dd>
+        <dd>Subject: {{msg.Subject}}</dd>
+
     {% endfor %}
-    </ul>
+    </dl>
 
-    <h1>My Webpage</h1>
-    {{ a_variable }}
-
-    {# a comment #}
 </body>
 </html>
